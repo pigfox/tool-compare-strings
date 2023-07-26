@@ -13,11 +13,17 @@ func main() {
 	} else {
 		log.Println("both strings are", l1, "characters longs")
 	}
+	err := 0
 	for i := 0; i < l1; i++ {
 		if s1[i] != s2[i] {
 			log.Println("s1=", s1[i], "s2=", s2[i], "@ char", i)
-			log.Fatal("Exit")
+			err++
 		}
 	}
+	if err != 0 {
+		log.Println("num errors", err)
+		log.Fatal("Exit")
+	}
+
 	log.Println("Strings are equal")
 }
